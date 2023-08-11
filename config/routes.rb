@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :submissions
   resources :assignments
   resources :enrollments
-  resources :students
+  resources :students do
+    member { get "example", to: "students/example#pure_sidekiq_job" }
+  end
   resources :courses
   resources :teachers
   resources :departments

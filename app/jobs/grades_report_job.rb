@@ -1,7 +1,6 @@
 require "csv"
-require "acidic_job"
 
-class GradesReportJob 
+class GradesReportJob
   def perform
     CSV.open("grades_report.csv", "wb") do |csv|
       csv << %w[Course Student Grade]
